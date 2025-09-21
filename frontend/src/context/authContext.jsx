@@ -1,22 +1,20 @@
-import React from 'react'
-import { createContext } from 'react'
-export const authDataContext= createContext()
-function AuthContext({children}) {
-    let serverUrl = "https://onecart-backend-9953.onrender.com"
+import React, { createContext } from "react";
 
-    let value = {
-       serverUrl
-    }
+// Capitalize context name for consistency
+export const AuthDataContext = createContext();
+
+function AuthContext({ children }) {
+  const serverUrl = "https://onecart-backend-9953.onrender.com";
+
+  const value = {
+    serverUrl,
+  };
+
   return (
-
-    
-    <div>
-        <authDataContext.Provider value={value}>
-            {children}
-        </authDataContext.Provider>
-      
-    </div>
-  )
+    <AuthDataContext.Provider value={value}>
+      {children}
+    </AuthDataContext.Provider>
+  );
 }
 
-export default AuthContext
+export default AuthContext;
